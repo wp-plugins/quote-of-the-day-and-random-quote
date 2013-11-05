@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Quote of the Day and Random Quote
-Plugin URI: http://welovequotes.net
+Plugin URI: http://wordpress.org/plugins/quote-of-the-day-and-random-quote/
 Description: The Quote of the Day or a Random Quote on your website, from WeLoveQuotes.net
 Version: 1.0
 Author: WeLoveQuotes.net
@@ -57,7 +57,7 @@ function welovequotes_quote_of_the_day($showlink) {
 
 	if($quoteOfTheDay_quote == "")
 	{
-		$quoteOfTheDay_quote = '<div class="weLoveQuotes quote">You can do anything, but not everything.</div><div class="weLoveQuotes author">- <a href="http://welovequotes.net/david-allen" target="_blank">David Allen</a></div>';
+		$quoteOfTheDay_quote = '<div class="weLoveQuotes quote">You can do anything, but not everything.</div><div class="weLoveQuotes author"><a href="http://welovequotes.net/david-allen" target="_blank">David Allen</a></div>';
 	}
 
     if($showlink == 'true' || $showlink == '1')
@@ -96,7 +96,7 @@ function welovequotes_random_quote($showlink) {
 
 	if($randomquote == "")
 	{
-		$randomquote = '<div class="weLoveQuotes quote">You can do anything, but not everything.</div><div class="weLoveQuotes author">- <a href="http://welovequotes.net/david-allen" target="_blank">David Allen</a></div>';
+		$randomquote = '<div class="weLoveQuotes quote">You can do anything, but not everything.</div><div class="weLoveQuotes author"><a href="http://welovequotes.net/david-allen" target="_blank">David Allen</a></div>';
 	}
 		
 	if($showlink == 'true' || $showlink == '1')
