@@ -3,7 +3,7 @@ Contributors: dailyverses
 Donate link: http://www.welovequotes.net/
 Tags: quotes,quote,quotations,widget,daily,day,everyday,random,inspirational,love
 Requires at least: 2.7.0
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
