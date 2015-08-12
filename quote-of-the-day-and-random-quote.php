@@ -3,7 +3,7 @@
 Plugin Name: Quote of the Day and Random Quote
 Plugin URI: http://wordpress.org/plugins/quote-of-the-day-and-random-quote/
 Description: The Quote of the Day or a Random Quote on your website, from WeLoveQuotes.net
-Version: 1.0
+Version: 1.1
 Author: WeLoveQuotes.net
 Author URI: http://welovequotes.net
 License: GPL2
@@ -41,7 +41,7 @@ function welovequotes_quote_of_the_day($showlink) {
 
 	if($quoteOfTheDay_date != $quoteOfTheDay_currentDate && $quoteOfTheDay_lastAttempt < (date('U') - 3600))
 	{
-		$url = 'http://welovequotes.net/gettext.ashx?date=' . $quoteOfTheDay_currentDate . '&url=' . $_SERVER['HTTP_HOST'] . '&type=daily1_0';
+		$url = 'http://welovequotes.net/gettext.ashx?date=' . $quoteOfTheDay_currentDate . '&url=' . $_SERVER['HTTP_HOST'] . '&type=daily1_1';
 		$result = wp_remote_get($url);
 
 		update_option('quoteoftheday_LastAttempt', date('U'));
@@ -79,7 +79,7 @@ function welovequotes_random_quote($showlink) {
 	
 	if($randomquote == "" && $randomquote_lastAttempt < (date('U') - 3600))
 	{
-		$url = 'http://welovequotes.net/gettext.ashx?position=' . $position . '&url=' . $_SERVER['HTTP_HOST'] . '&type=random1_0';
+		$url = 'http://welovequotes.net/gettext.ashx?position=' . $position . '&url=' . $_SERVER['HTTP_HOST'] . '&type=random1_1';
 		$result = wp_remote_get($url);
 
 		if(!is_wp_error($result)) 
@@ -116,10 +116,9 @@ add_shortcode('randomquote', 'welovequotes_random_quote');
 
 class WeLoveQuotes_QuoteOfTheDayWidget extends WP_Widget
 {
-  function WeLoveQuotes_QuoteOfTheDayWidget()
+  function __construct() 
   {
-    $widget_ops = array('classname' => 'welovequotes_quoteoftheday', 'description' => 'Show the daily quote from WeLoveQuotes.net on your website!' );
-    $this->WP_Widget('WeLoveQuotes_QuoteOfTheDayWidget', 'Quote of the Day', $widget_ops);
+	parent::__construct('WeLoveQuotes_QuoteOfTheDayWidget', __('Quote of the Day', 'welovequotes_quoteoftheday' ), array ('description' => __( 'Show the daily quote from WeLoveQuotes.net on your website!', 'welovequotes_quoteoftheday')));
   }
  
   function form($instance)
@@ -174,10 +173,9 @@ class WeLoveQuotes_QuoteOfTheDayWidget extends WP_Widget
 
 class WeLoveQuotes_RandomQuoteWidget extends WP_Widget
 {
-  function WeLoveQuotes_RandomQuoteWidget()
+  function __construct() 
   {
-    $widget_ops = array('classname' => 'welovequotes_randomquote', 'description' => 'Show a random quote from WeLoveQuotes.net on your website!' );
-    $this->WP_Widget('WeLoveQuotes_RandomQuoteWidget', 'Random Quote', $widget_ops);
+	parent::__construct('WeLoveQuotes_RandomQuoteWidget', __('Random Quote', 'welovequotes_randomquote' ), array ('description' => __( 'Show a random quote from WeLoveQuotes.net on your website!', 'welovequotes_randomquote')));
   }
  
   function form($instance)

@@ -3,7 +3,7 @@ Contributors: dailyverses
 Donate link: http://www.welovequotes.net/
 Tags: quotes,quote,quotations,widget,daily,day,everyday,random,inspirational,love
 Requires at least: 2.7.0
-Tested up to: 4.1
+Tested up to: 4.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -36,6 +36,9 @@ This section describes how to install the plugin and get it working.
 1. This is what both plugins will look like by default. By changing the css you can change the appearance of the plugin.
 
 == Changelog ==
+
+= 1.1 =
+* Improved widget constructor for wordpress 4.3
 
 = 1.0 =
 * Initial version
